@@ -1,0 +1,55 @@
+$ cd /d/Cognizant/Hands_on/Week6/GitDemo
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ pwd
+/d/Cognizant/Hands_on/Week6/GitDemo
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ mkdir log
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ touch sample.log
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ echo "Error Log" > log/error.log
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        log/
+        sample.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ notepad .gitignore
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git add .gitignore
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git commit -m "Added gitignore file"
+[master 3d09dca] Added gitignore file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
