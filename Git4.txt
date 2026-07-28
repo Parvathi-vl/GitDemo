@@ -1,0 +1,140 @@
+parva@4GW23CS073 MINGW64 /d
+$ cd /d/Cognizant/Hands_on/Week6/GitDemo
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git branch GitWork
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (GitWork)
+$ git branch
+* GitWork
+  master
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (GitWork)
+$ echo "<message>Hello from GitWork Branch</message>" > hello.xml
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (GitWork)
+$ cat hello.xml
+<message>Hello from GitWork Branch</message>
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (GitWork)
+$ git status
+On branch GitWork
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.xml
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (GitWork)
+$ git add hello.xml
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (GitWork)
+$ git commit -m "Added hello.xml in GitWork"
+[GitWork e292316] Added hello.xml in GitWork
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (GitWork)
+$ git checkout master
+Switched to branch 'master'
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git branch
+  GitWork
+* master
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ echo "<message>Hello from GitWork Branch</message>" > hello.xml
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ cat hello.xml
+<message>Hello from GitWork Branch</message>
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git add hello.xml
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git commit -m "Added hello.xml in GitWork"
+[master 212e7a2] Added hello.xml in GitWork
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git log --oneline --graph --decorate
+*   75559a2 (HEAD -> master) Merge branch 'GitWork'
+|\
+| * e292316 (GitWork) Added hello.xml in GitWork
+* | 212e7a2 Added hello.xml in GitWork
+|/
+* ea26ef8 Added branch file
+* 3d09dca Added gitignore file
+* 1c0ea84 (origin/master) Added welcome file
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git diff master GitWork
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git difftool master GitWork
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git merge GitWork
+Already up to date.
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ notepad hello.xml
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git add hello.xml
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git commit -m "Resolved merge conflict"
+On branch master
+nothing to commit, working tree clean
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ notepad .gitignore
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git add .gitignore
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git commit -m "Added backup files to gitignore"
+[master c04ce5d] Added backup files to gitignore
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git branch
+  GitWork
+* master
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git branch -d GitWork
+Deleted branch GitWork (was e292316).
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git log --oneline --graph --decorate
+* c04ce5d (HEAD -> master) Added backup files to gitignore
+*   75559a2 Merge branch 'GitWork'
+|\
+| * e292316 Added hello.xml in GitWork
+* | 212e7a2 Added hello.xml in GitWork
+|/
+* ea26ef8 Added branch file
+* 3d09dca Added gitignore file
+* 1c0ea84 (origin/master) Added welcome file
