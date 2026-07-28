@@ -1,0 +1,51 @@
+parva@4GW23CS073 MINGW64 ~ (master)
+$ cd /d/Cognizant/Hands_on/Week6/GitDemo
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git branch
+* master
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git remote -v
+origin  https://github.com/Parvathi-vl/GitDemo.git (fetch)
+origin  https://github.com/Parvathi-vl/GitDemo.git (push)
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git pull origin master
+From https://github.com/Parvathi-vl/GitDemo
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git push origin master
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (14/14), 1.27 KiB | 325.00 KiB/s, done.
+Total 14 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/Parvathi-vl/GitDemo.git
+   1c0ea84..c04ce5d  master -> master
+
+parva@4GW23CS073 MINGW64 /d/Cognizant/Hands_on/Week6/GitDemo (master)
+$ git log --oneline --graph --decorate
+* c04ce5d (HEAD -> master, origin/master) Added backup files to gitignore
+*   75559a2 Merge branch 'GitWork'
+|\
+| * e292316 Added hello.xml in GitWork
+* | 212e7a2 Added hello.xml in GitWork
+|/
+* ea26ef8 Added branch file
+* 3d09dca Added gitignore file
+* 1c0ea84 Added welcome file
